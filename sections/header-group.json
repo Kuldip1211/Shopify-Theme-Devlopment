@@ -1,0 +1,32 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header Group",
+  "sections": {
+    "annousement_bar_g7cyeD": {
+      "type": "annousement-bar",
+      "name": "Announcement Bar",
+      "settings": {
+        "announcement_text": "✨ Welcome to our store! Free shipping on orders over $50 ✨",
+        "bg_color": "#28334b",
+        "text_color": "#ffffff"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {}
+    }
+  },
+  "order": [
+    "annousement_bar_g7cyeD",
+    "header"
+  ]
+}

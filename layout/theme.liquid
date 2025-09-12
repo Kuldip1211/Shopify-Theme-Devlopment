@@ -6,7 +6,7 @@
          {{ "theme.css" | asset_url | stylesheet_tag }}
     </head>
     <body>
-        {% section 'header' %} 
+        {% sections 'header-group' %} 
             <main>
       {{ content_for_layout }}
     </main>
