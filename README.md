@@ -39,6 +39,7 @@ A clean and structured Shopify theme built for
 
 <h2>🚀 Quick Start</h2>
 
+<pre>
 <code>
 # Clone this repo
 git clone <your-gitlab-repo-url>
@@ -56,8 +57,10 @@ git branch -M main
 git push -u origin main
 
 </code>
+</pre>
 
 <h2>🧭 Repository Structure</h2>
+<pre>
 <code>
 /assets      - css, js, images
 /config      - theme settings and presets
@@ -66,7 +69,7 @@ git push -u origin main
 /sections    - customizable page sections
 /snippets    - reusable Liquid fragments
 </code>
-
+</pre>
 <h2>💡 Tips for Learners</h2>
 <ul>
   <li>
