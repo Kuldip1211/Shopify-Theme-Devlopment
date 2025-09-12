@@ -1,0 +1,38 @@
+<div class="cart-section-container">
+  <h1>Your Shopping Cart</h1>
+
+  {% if cart.item_count > 0 %}
+    <div class="cart-section-layout">
+      <!-- Left: Product List -->
+      <div class="cart-section-products">
+        {% for item in cart.items %}
+          <div class="cart-section-product-card">
+            <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.product.title }}" class="cart-section-product-img">
+            <div class="cart-section-product-info">
+              <h2 class="cart-section-product-title">{{ item.product.title }}</h2>
+              <p class="cart-section-product-qty">Qty: {{ item.quantity }}</p>
+              <p class="cart-section-product-price">{{ item.line_price | money }}</p>
+              <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="cart-section-remove-btn">✖ Remove</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- Right: Summary -->
+      <div class="cart-section-summary">
+        <h2>Order Summary</h2>
+        <p><strong>Subtotal:</strong> {{ cart.total_price | money }}</p>
+        <a href="/checkout" class="cart-section-checkout-btn">Proceed to Checkout</a>
+        <a href="/collections/all" class="cart-section-continue-btn">🛍 Continue Shopping</a>
+      </div>
+    </div>
+  {% else %}
+    <div class="cart-section-empty">
+      <img src="{{ 'emptycart.png' | asset_url }}" alt="Empty Cart" class="cart-section-empty-img">
+      <h2>Your cart is empty</h2>
+      <p>Looks like you haven’t added anything yet. Start shopping now!</p>
+      <a href="/collections/all" class="cart-section-continue-btn">🛍 Continue Shopping</a>
+    </div>
+  {% endif %}
+</div>
+

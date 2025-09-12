@@ -1,8 +1,15 @@
 <html>
     <head>
+        <title>{{ page_title }}</title>
         {{ content_for_header }}
+        {% comment %} include css {% endcomment %}
+         {{ "theme.css" | asset_url | stylesheet_tag }}
     </head>
     <body>
-        {{ content_for_layout }}
+        {% section 'header' %} 
+            <main>
+      {{ content_for_layout }}
+    </main>
+        {% section 'footer' %}
     </body>
 </html>

@@ -1,0 +1,38 @@
+<!-- templates/product.liquid -->
+<div class="product-page-wrapper">
+
+  <!-- 🔙 Back Button -->
+  <div class="back-btn-wrapper">
+    <a href="/collections/all" class="back-btn">← Back to Shop</a>
+  </div>
+
+  <div class="product-page">
+    <!-- Product Image with Loader -->
+    <div class="product-image">
+      <div class="image-loader"></div>
+      <img src="{{ product.featured_image | image_url }}" alt="{{ product.title }}" 
+           onload="this.previousElementSibling.style.display='none'; this.style.display='block';">
+    </div>
+
+    <!-- Product Details -->
+    <div class="product-details">
+      <h1 class="product-title">{{ product.title }}</h1>
+      <p class="product-short-desc">
+        Freshly harvested organic green tea leaves packed with antioxidants for a healthy lifestyle.
+      </p>
+
+      <div class="product-price">{{ product.price | money }}</div>
+
+      <div class="product-long-desc">
+        <h3>About this product</h3>
+        <p>{{ product.description }}</p>
+      </div>
+
+      {% form 'product', product %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <button type="submit" class="add-to-cart">🛒 Add to Cart</button>
+      {% endform %}
+    </div>
+  </div>
+</div>
+

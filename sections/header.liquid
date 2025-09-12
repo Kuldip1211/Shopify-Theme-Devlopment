@@ -1,0 +1,183 @@
+<!-- sections/header.liquid -->
+<header class="site-header">
+  <div class="header-container">
+    <!-- Logo -->
+    <a href="/" class="logo">ShivFarm</a>
+
+    <!-- Navigation -->
+    <nav class="nav-links">
+        {% for link in linklists.main-menu.links %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+    </nav>
+
+    <!-- Icons -->
+    <div class="header-icons">
+      <a href="/account" class="icon-link">👤</a>
+      <a href="/cart" class="icon-link">🛒 <span class="cart-count">{{ cart.item_count }}</span></a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="/">Home</a>
+    <a href="/collections/all">Shop</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+    <a href="/account">Account</a>
+    <a href="/cart">Cart ({{ cart.item_count }})</a>
+  </div>
+</header>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* Apply Google Font */
+  * {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Header base */
+  .site-header {
+    background: #fff;
+    padding: 20px 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Logo */
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #222;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    transition: color 0.3s ease;
+  }
+  .logo:hover {
+    color: #0077ff;
+  }
+
+  /* Navigation links */
+  .nav-links {
+    display: flex;
+    gap: 25px;
+  }
+  .nav-links a {
+    position: relative;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  .nav-links a:hover {
+    color: #0077ff;
+  }
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #0077ff;
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  /* Icons */
+  .header-icons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .icon-link {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    transition: transform 0.2s ease, color 0.3s ease;
+  }
+  .icon-link:hover {
+    color: #0077ff;
+    transform: scale(1.1);
+  }
+  .cart-count {
+    position: absolute;
+    top: -10px;
+    right: -12px;
+    background: #ff4444;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 7px;
+    border-radius: 50%;
+  }
+
+  /* Mobile Menu */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    padding: 20px;
+    border-top: 1px solid #eee;
+  }
+  .mobile-menu a {
+    padding: 12px 0;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  .mobile-menu a:hover {
+    color: #0077ff;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+    .menu-toggle {
+      display: block;
+    }
+    .mobile-menu.active {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggle = document.querySelector(".menu-toggle");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    toggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("active");
+    });
+  });
+</script>
