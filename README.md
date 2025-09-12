@@ -39,7 +39,7 @@ A clean and structured Shopify theme built for
 
 <h2>🚀 Quick Start</h2>
 
-```bash
+<code>
 # Clone this repo
 git clone <your-gitlab-repo-url>
 cd shopify-learning-theme
@@ -55,15 +55,17 @@ git remote add origin https://gitlab.com/<username>/<repo>.git
 git branch -M main
 git push -u origin main
 
-<h2>🧭 Repository Structure</h2>
+</code>
 
+<h2>🧭 Repository Structure</h2>
+<code>
 /assets      - css, js, images
 /config      - theme settings and presets
 /layout      - theme.liquid and alternate layouts
 /templates   - index, product, collection, cart
 /sections    - customizable page sections
 /snippets    - reusable Liquid fragments
-
+</code>
 
 <h2>💡 Tips for Learners</h2>
 <ul>
