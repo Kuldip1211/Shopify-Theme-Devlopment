@@ -46,8 +46,7 @@ cd shopify-learning-theme
 
 # Serve theme locally with Shopify CLI
 shopify theme serve
-bash
-Copy code
+
 # Push existing theme to GitLab
 git init
 git add .
@@ -55,13 +54,54 @@ git commit -m "Initial commit"
 git remote add origin https://gitlab.com/<username>/<repo>.git
 git branch -M main
 git push -u origin main
+
 <h2>🧭 Repository Structure</h2>
-plaintext
-Copy code
+
 /assets      - css, js, images
 /config      - theme settings and presets
 /layout      - theme.liquid and alternate layouts
 /templates   - index, product, collection, cart
 /sections    - customizable page sections
 /snippets    - reusable Liquid fragments
-<h2>💡 Tips for Learners</h2> <ul> <li>Start with <code>/layout/theme.liquid</code> to understand how the theme is structured.</li> <li>Explore <code>product</code>, <code>collection</code>, and <code>cart</code> objects.</li> <li>Use <code>shopify theme serve</code> to live preview changes.</li> </ul> <h2>📌 Note</h2> <p style="background:#fff8b3; padding:10px; border-left:4px solid #f1c40f;"> <strong>Educational use only:</strong> This theme is built for learning purposes. Do not use it as-is for production without auditing. </p> <h2>🤝 Contributing</h2> <p>Contributions are welcome! Open an issue or submit a merge request with improvements or fixes.</p> <h2>📬 Contact</h2> <p> <a href="mailto:kuldeepchudasama69@gmail.com"> <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"> </a> <a href="https://linkedin.com/in/kuldeep-chudasama-1759b1256" target="_blank"> <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"> </a> </p> <hr/> <p align="center"><i>Created by Kuldeep — Happy Learning! 🚀</i></p>
+
+
+<h2>💡 Tips for Learners</h2>
+<ul>
+  <li>
+    Start with <code>/layout/theme.liquid</code> to understand how the theme is
+    structured.
+  </li>
+  <li>
+    Explore <code>product</code>, <code>collection</code>, and
+    <code>cart</code> objects.
+  </li>
+  <li>Use <code>shopify theme serve</code> to live preview changes.</li>
+</ul>
+<h2>📌 Note</h2>
+<p style="background: #fff8b3; padding: 10px; border-left: 4px solid #f1c40f">
+  <strong>Educational use only:</strong> This theme is built for learning
+  purposes. Do not use it as-is for production without auditing.
+</p>
+<h2>🤝 Contributing</h2>
+<p>
+  Contributions are welcome! Open an issue or submit a merge request with
+  improvements or fixes.
+</p>
+<h2>📬 Contact</h2>
+<p>
+  <a href="mailto:kuldeepchudasama69@gmail.com">
+    <img
+      src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"
+      alt="Email"
+    />
+  </a>
+  <a href="https://linkedin.com/in/kuldeep-chudasama-1759b1256" target="_blank">
+    <img
+      src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"
+      alt="LinkedIn"
+    />
+  </a>
+</p>
+<hr />
+<p align="center"><i>Created by Kuldeep — Happy Learning! 🚀</i></p>
+
