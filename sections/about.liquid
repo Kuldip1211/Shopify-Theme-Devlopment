@@ -1,0 +1,225 @@
+<div class="about-section">
+  <div class="about-container">
+
+    <!-- Company / Place -->
+    <div class="about-company">
+      <h2>{{ section.settings.company_heading }}</h2>
+      <p>{{ section.settings.company_text }}</p>
+      {% if section.settings.company_image != blank %}
+        <img src="{{ section.settings.company_image | img_url: '800x600' }}" alt="Company" class="about-image">
+      {% endif %}
+    </div>
+
+    <!-- Owner -->
+    <div class="about-owner">
+      <h2>{{ section.settings.owner_heading }}</h2>
+      <div class="owner-wrapper">
+        {% if section.settings.owner_image != blank %}
+          <img src="{{ section.settings.owner_image | img_url: '400x400' }}" alt="Owner" class="about-avatar">
+        {% endif %}
+        <p>{{ section.settings.owner_text }}</p>
+      </div>
+    </div>
+
+    <!-- Staff -->
+    <div class="about-staff">
+      <h2>{{ section.settings.staff_heading }}</h2>
+      <div class="staff-grid">
+        {% for block in section.blocks %}
+          <div class="staff-card">
+            {% if block.settings.staff_image != blank %}
+              <img src="{{ block.settings.staff_image | img_url: '300x300' }}" alt="{{ block.settings.staff_name }}" class="staff-avatar">
+            {% endif %}
+            <h3>{{ block.settings.staff_name }}</h3>
+            <p class="staff-role">{{ block.settings.staff_role }}</p>
+            <p class="staff-bio">{{ block.settings.staff_bio }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+.about-section {
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+  background: #f9fafb;
+}
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Company */
+.about-company {
+  text-align: center;
+}
+.about-company h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.about-company p {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+.about-company img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* Owner */
+.about-owner h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.owner-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.owner-wrapper img.about-avatar {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+.owner-wrapper p {
+  font-size: 16px;
+  color: #374151;
+  max-width: 600px;
+}
+
+/* Staff */
+.about-staff {
+  text-align: center;
+}
+.about-staff h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+.staff-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+.staff-card:hover {
+  transform: translateY(-5px);
+}
+.staff-avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+.staff-card h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+.staff-role {
+  font-size: 14px;
+  color: #2563eb;
+  margin-bottom: 8px;
+}
+.staff-bio {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .owner-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  .owner-wrapper p {
+    max-width: 100%;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "About",
+  "settings": [
+    {
+      "type": "text",
+      "id": "company_heading",
+      "label": "Company Heading",
+      "default": "About Our Company"
+    },
+    {
+      "type": "textarea",
+      "id": "company_text",
+      "label": "Company Description",
+      "default": "We are a passionate team committed to delivering quality products and services."
+    },
+    {
+      "type": "image_picker",
+      "id": "company_image",
+      "label": "Company Image"
+    },
+    {
+      "type": "text",
+      "id": "owner_heading",
+      "label": "Owner Heading",
+      "default": "Meet the Founder"
+    },
+    {
+      "type": "textarea",
+      "id": "owner_text",
+      "label": "Owner Bio",
+      "default": "Our founder believes in hard work, honesty, and quality service."
+    },
+    {
+      "type": "image_picker",
+      "id": "owner_image",
+      "label": "Owner Image"
+    },
+    {
+      "type": "text",
+      "id": "staff_heading",
+      "label": "Staff Section Heading",
+      "default": "Our Team"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "staff",
+      "name": "Staff Member",
+      "settings": [
+        { "type": "image_picker", "id": "staff_image", "label": "Staff Image" },
+        { "type": "text", "id": "staff_name", "label": "Staff Name", "default": "John Doe" },
+        { "type": "text", "id": "staff_role", "label": "Staff Role", "default": "Manager" },
+        { "type": "textarea", "id": "staff_bio", "label": "Staff Bio", "default": "Dedicated to providing the best experience to customers." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About"
+    }
+  ]
+}
+{% endschema %}

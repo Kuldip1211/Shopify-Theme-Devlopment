@@ -1,4 +1,3 @@
-<!-- sections/header.liquid -->
 <header class="site-header">
   <div class="header-container">
     <!-- Logo -->
@@ -6,27 +5,26 @@
 
     <!-- Navigation -->
     <nav class="nav-links">
-        {% for link in linklists.main-menu.links %}
-            <a href="{{ link.url }}">{{ link.title }}</a>
-        {% endfor %}
+      {% for link in linklists.main-menu.links %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
     </nav>
 
-    <!-- Icons -->
-    <div class="header-icons">
-      <a href="/account" class="icon-link">👤</a>
-      <a href="/cart" class="icon-link">🛒 <span class="cart-count">{{ cart.item_count }}</span></a>
+    <!-- Icons + Menu Toggle -->
+    <div class="header-right">
+      <div class="header-icons">
+        <a href="/account" class="icon-link">👤</a>
+        <a href="/cart" class="icon-link">🛒 <span class="cart-count">{{ cart.item_count }}</span></a>
+      </div>
+      <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
     </div>
-
-    <!-- Mobile Menu Button -->
-    <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
   </div>
 
   <!-- Mobile Menu -->
   <div class="mobile-menu">
-    <a href="/">Home</a>
-    <a href="/collections/all">Shop</a>
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
+    {% for link in linklists.main-menu.links %}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    {% endfor %}
     <a href="/account">Account</a>
     <a href="/cart">Cart ({{ cart.item_count }})</a>
   </div>
@@ -36,15 +34,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-  /* Apply Google Font */
   * {
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   /* Header base */
   .site-header {
     background: #fff;
-    padding: 20px 25px;
+    padding: 15px 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
@@ -72,7 +72,7 @@
     color: #0077ff;
   }
 
-  /* Navigation links */
+  /* Navigation links (desktop) */
   .nav-links {
     display: flex;
     gap: 25px;
@@ -102,11 +102,18 @@
     width: 100%;
   }
 
+  /* Right section (icons + toggle) */
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
   /* Icons */
   .header-icons {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
   }
   .icon-link {
     font-size: 1.4rem;
@@ -131,7 +138,7 @@
     border-radius: 50%;
   }
 
-  /* Mobile Menu */
+  /* Mobile Menu Button */
   .menu-toggle {
     display: none;
     background: none;
@@ -140,6 +147,7 @@
     cursor: pointer;
   }
 
+  /* Mobile Menu */
   .mobile-menu {
     display: none;
     flex-direction: column;
@@ -159,15 +167,27 @@
   }
 
   /* Responsive */
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     .nav-links {
       display: none;
     }
     .menu-toggle {
       display: block;
     }
+    .header-container {
+      gap: 20px;
+    }
     .mobile-menu.active {
       display: flex;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .logo {
+      font-size: 1.4rem;
+    }
+    .icon-link {
+      font-size: 1.2rem;
     }
   }
 </style>
@@ -176,6 +196,7 @@
   document.addEventListener("DOMContentLoaded", function() {
     const toggle = document.querySelector(".menu-toggle");
     const mobileMenu = document.querySelector(".mobile-menu");
+
     toggle.addEventListener("click", () => {
       mobileMenu.classList.toggle("active");
     });

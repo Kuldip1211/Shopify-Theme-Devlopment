@@ -1,0 +1,73 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "about_BnifYx": {
+      "type": "about",
+      "blocks": {
+        "staff_UFzx4z": {
+          "type": "staff",
+          "settings": {
+            "staff_image": "shopify://shop_images/man-looks-to-the-left-on-a-fall-day.jpg",
+            "staff_name": "John Doe",
+            "staff_role": "Manager",
+            "staff_bio": "Dedicated to providing the best experience to customers."
+          }
+        },
+        "staff_MpY8C6": {
+          "type": "staff",
+          "settings": {
+            "staff_image": "shopify://shop_images/woman-poses-in-dark-room.jpg",
+            "staff_name": "John Doe",
+            "staff_role": "Manager",
+            "staff_bio": "Dedicated to providing the best experience to customers."
+          }
+        },
+        "staff_qAwKNe": {
+          "type": "staff",
+          "settings": {
+            "staff_image": "shopify://shop_images/woman-infront-of-tree-with-berries.jpeg",
+            "staff_name": "John Doe",
+            "staff_role": "Manager",
+            "staff_bio": "Dedicated to providing the best experience to customers."
+          }
+        },
+        "staff_eqUmzH": {
+          "type": "staff",
+          "settings": {
+            "staff_image": "shopify://shop_images/man-in-suit-on-stairs.jpg",
+            "staff_name": "John Doe",
+            "staff_role": "Manager",
+            "staff_bio": "Dedicated to providing the best experience to customers."
+          }
+        }
+      },
+      "block_order": [
+        "staff_UFzx4z",
+        "staff_MpY8C6",
+        "staff_qAwKNe",
+        "staff_eqUmzH"
+      ],
+      "name": "About",
+      "settings": {
+        "company_heading": "About Our Company",
+        "company_text": "We are a passionate team committed to delivering quality products and services.",
+        "company_image": "shopify://shop_images/fall-leaf-cookies-in-the-kitchen.jpg",
+        "owner_heading": "Meet the Founder",
+        "owner_text": "Our founder believes in hard work, honesty, and quality service.",
+        "owner_image": "shopify://shop_images/black-and-white-portrait-mens-fashion.jpg",
+        "staff_heading": "Our Team"
+      }
+    }
+  },
+  "order": [
+    "about_BnifYx"
+  ]
+}
