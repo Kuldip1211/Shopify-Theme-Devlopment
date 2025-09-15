@@ -1,0 +1,133 @@
+<!-- sections/featured-collection.liquid -->
+{% schema %}
+{
+  "name": "Featured Collection",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select collection"
+    },
+    {
+      "type": "range",
+      "id": "items_per_page",
+      "label": "Items per page",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "default": 6
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Collection"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+  :root {
+    --bg: #f9fafb;
+    --card: #ffffff;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --radius: 12px;
+    --shadow: 0 4px 14px rgba(0,0,0,0.08);
+    --gap: 16px;
+    --max-width: 1100px;
+    font-family: 'Poppins', sans-serif;
+    color: #111827;
+  }
+  .featured-collection-section {
+    background: var(--bg);
+    padding: 40px 20px;
+    display:flex;
+    justify-content:center;
+  }
+  .featured-collection-container {
+    width:100%;
+    max-width:var(--max-width);
+  }
+  .featured-collection-title {
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:20px;
+    text-align:center;
+  }
+  .featured-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:var(--gap);
+  }
+  .featured-card {
+    background:var(--card);
+    border-radius:var(--radius);
+    padding:16px;
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    align-items:center;
+    transition:transform .25s ease, box-shadow .25s ease;
+    overflow:hidden;
+  }
+  .featured-card:hover {
+    transform:translateY(-6px) scale(1.02);
+    box-shadow:0 12px 28px rgba(0,0,0,0.12);
+  }
+  .featured-img-wrap {
+    width:100%;
+    height:180px;
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .featured-img-wrap img {
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .4s ease;
+  }
+  .featured-card:hover .featured-img-wrap img {transform:scale(1.08);}
+  .featured-name {font-weight:600;font-size:18px;text-align:center}
+  .featured-price {font-weight:700;color:var(--accent);font-size:16px}
+  .featured-btn {
+    padding:10px 14px;
+    border-radius:var(--radius);
+    border:none;
+    background:var(--accent);
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s ease, transform .2s ease;
+    text-decoration:none;
+    display:inline-block;
+  }
+  .featured-btn:hover {background:#1d4ed8;transform:translateY(-2px);}
+  .featured-btn:active {transform:translateY(0);}
+  @media (max-width:600px){
+    .featured-img-wrap {height:140px}
+  }
+</style>
+
+<div class="featured-collection-section">
+  <div class="featured-collection-container">
+    <div class="featured-collection-title">Featured Collection</div>
+    {% if section.settings.collection != blank %}
+      <div class="featured-grid">
+        {% for product in collections[section.settings.collection].products limit: section.settings.items_per_page %}
+          <div class="featured-card">
+            <div class="featured-img-wrap">
+              <a href="{{ product.url }}"><img src="{{ product.featured_image | img_url: '600x' }}" alt="{{ product.title }}"></a>
+            </div>
+            <div class="featured-name">{{ product.title }}</div>
+            <div class="featured-price">{{ product.price | money }}</div>
+            <a href="{{ routes.cart_add_url }}?id={{ product.variants.first.id }}&quantity=1" 
+               class="featured-btn">Add to Cart</a>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p style="text-align:center;color:var(--muted)">No collection selected.</p>
+    {% endif %}
+  </div>
+</div>

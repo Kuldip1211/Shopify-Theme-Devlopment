@@ -1,7 +1,7 @@
 <!-- sections/announcement-bar.liquid -->
 {% if section.settings.announcement_text != blank %}
   <div class="announcement-bar" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
-    <p>{{ section.settings.announcement_text }}</p>
+    <marquee><p>{{ section.settings.announcement_text }}</p></marquee>
   </div>
 {% endif %}
 

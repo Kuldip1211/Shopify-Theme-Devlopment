@@ -1,39 +1,110 @@
-<h2>💡 Tips for Learners</h2>
-<ul>
-  <li>
-    Start with <code>/layout/theme.liquid</code> to understand how the theme is
-    structured.
-  </li>
-  <li>
-    Explore <code>product</code>, <code>collection</code>, and
-    <code>cart</code> objects.
-  </li>
-  <li>Use <code>shopify theme serve</code> to live preview changes.</li>
-</ul>
-<h2>📌 Note</h2>
-<p style="background: #fff8b3; padding: 10px; border-left: 4px solid #f1c40f">
-  <strong>Educational use only:</strong> This theme is built for learning
-  purposes. Do not use it as-is for production without auditing.
-</p>
-<h2>🤝 Contributing</h2>
-<p>
-  Contributions are welcome! Open an issue or submit a merge request with
-  improvements or fixes.
-</p>
-<h2>📬 Contact</h2>
-<p>
-  <a href="mailto:kuldeepchudasama69@gmail.com">
-    <img
-      src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"
-      alt="Email"
-    />
-  </a>
-  <a href="https://linkedin.com/in/kuldeep-chudasama-1759b1256" target="_blank">
-    <img
-      src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"
-      alt="LinkedIn"
-    />
-  </a>
-</p>
-<hr />
-<p align="center"><i>Created by Kuldeep — Happy Learning! 🚀</i></p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Choose Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --radius: 12px;
+      --shadow: 0 4px 14px rgba(0,0,0,0.08);
+      --gap: 20px;
+      --max-width: 1100px;
+      font-family: 'Poppins', sans-serif;
+      color: #111827;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: var(--max-width);
+      width: 100%;
+    }
+    .title {
+      font-size: 32px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 40px;
+      font-size: 16px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--gap);
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      text-align: center;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    }
+    .icon {
+      font-size: 40px;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .card-title {
+      font-weight: 600;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .card-text {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    @media (max-width: 600px) {
+      .title { font-size: 26px; }
+      .card-title { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Why Choose Us</h1>
+    <p class="subtitle">Discover the key reasons our customers trust and love us.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">⚡</div>
+        <div class="card-title">Fast & Reliable</div>
+        <p class="card-text">We ensure quick delivery and reliable service so you never have to wait long.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🌱</div>
+        <div class="card-title">Eco-Friendly</div>
+        <p class="card-text">Our processes are sustainable and environmentally friendly to support the planet.</p>
+      </div>
+      <div class="card">
+        <div class="icon">💎</div>
+        <div class="card-title">Premium Quality</div>
+        <p class="card-text">Every product is carefully checked to maintain the highest quality standards.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🤝</div>
+        <div class="card-title">Trusted Support</div>
+        <p class="card-text">Our team is always ready to help, providing 24/7 customer support.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

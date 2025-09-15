@@ -1,0 +1,21 @@
+
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {}
+    },
+    "coll_RhckeL": {
+      "type": "coll",
+      "name": "Featured Collection",
+      "settings": {
+        "collection": "automated-collection",
+        "items_per_page": 4
+      }
+    }
+  },
+  "order": [
+    "main",
+    "coll_RhckeL"
+  ]
+}
