@@ -1,0 +1,154 @@
+<div class="subscribe-section">
+  <div class="subscribe-container">
+    <!-- Left side -->
+    <div class="subscribe-info">
+      <h2 class="subscribe-title">{{ section.settings.heading }}</h2>
+      <p class="subscribe-desc">{{ section.settings.subheading }}</p>
+    </div>
+
+    <!-- Right side -->
+    <div class="subscribe-form-wrapper">
+      {% form 'customer' %}
+        {% if form.posted_successfully? %}
+          <p class="form-success">✅ Thank you for subscribing!</p>
+        {% endif %}
+        {% if form.errors %}
+          <ul class="form-errors">
+            {% for field in form.errors %}
+              <li>{{ field | capitalize }} - {{ form.errors.messages[field] }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        <div class="subscribe-form">
+          <input type="email" id="email" name="contact[email]" placeholder="Enter your email" required>
+          <button type="submit" class="subscribe-btn">{{ section.settings.button_text }}</button>
+        </div>
+      {% endform %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .subscribe-section {
+    background: #f9fafb;
+    padding: 60px 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .subscribe-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #f9fafb;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    align-items: center; /* vertical centering */
+  }
+
+  /* Left side */
+  .subscribe-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+  .subscribe-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .subscribe-desc {
+    font-size: 16px;
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  /* Right side */
+  .subscribe-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .subscribe-form {
+    display: flex;
+    align-items: center;   /* vertical centering */
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
+  .subscribe-form input {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+  }
+  .subscribe-btn {
+    padding: 14px 24px;
+    background: #2563eb;
+    color: #ddd;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background .2s;
+    white-space: nowrap; /* keeps button text aligned */
+  }
+  .subscribe-btn:hover {
+    background: #1d4ed8;
+  }
+
+  .form-success { color: green; margin-top: 14px; text-align: center; }
+  .form-errors { color: red; margin-top: 14px; text-align: center; }
+
+  /* Tablet */
+  @media (max-width: 992px) {
+
+    #email{
+    width: 300px;
+    }
+    .subscribe-container {
+      grid-template-columns: 1fr;
+      padding-top: 10px;
+      text-align: center;
+    }
+    .subscribe-info {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .subscribe-title { font-size: 24px; }
+    .subscribe-desc { font-size: 14px; }
+    .subscribe-form {
+      flex-direction: column;
+    }
+    .subscribe-container{
+    padding-top: 0;
+    }
+    .subscribe-btn {
+      width: 100%;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Subscribe Form",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Subscribe for New Arrivals" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Be the first to know about our new products and exclusive offers." },
+    { "type": "text", "id": "button_text", "label": "Button Text", "default": "Subscribe" }
+  ],
+  "presets": [
+    {
+      "name": "Subscribe Form"
+    }
+  ]
+}
+{% endschema %}

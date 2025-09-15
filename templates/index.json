@@ -76,11 +76,21 @@
         "heading": "Why Choose Us",
         "Description": "Discover the key reasons our customers trust and love us."
       }
+    },
+    "simple_contact_xVhfLF": {
+      "type": "simple-contact",
+      "name": "Subscribe Form",
+      "settings": {
+        "heading": "Subscribe for New Arrivals",
+        "subheading": "Be the first to know about our new products and exclusive offers.",
+        "button_text": "Subscribe"
+      }
     }
   },
   "order": [
     "hero",
     "coll_WhmXMK",
-    "why_choose_us_G4MmDp"
+    "why_choose_us_G4MmDp",
+    "simple_contact_xVhfLF"
   ]
 }
