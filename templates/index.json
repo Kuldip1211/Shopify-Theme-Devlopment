@@ -1,4 +1,10 @@
 {
-    "setting"   : {},
-    "order"     : []   
+    "sections" : {
+        "hero" : {
+            "type" : "hero"
+        }
+    },
+    "order"     :[
+        "hero"
+    ]
 }
