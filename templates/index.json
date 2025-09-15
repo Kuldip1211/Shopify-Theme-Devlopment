@@ -1,10 +1,86 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections" : {
-        "hero" : {
-            "type" : "hero"
-        }
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "hero_bg": "shopify://shop_images/silver-lamp-on-a-white-table-next-to-books.jpg",
+        "hero_heading": "Welcome to Our Store",
+        "hero_subheading": "Discover amazing products crafted just for you.",
+        "hero_button_text": "Shop Now",
+        "hero_button_link": "shopify://collections/all",
+        "overlay_opacity": 40,
+        "content_alignment": "center"
+      }
     },
-    "order"     :[
-        "hero"
-    ]
+    "coll_WhmXMK": {
+      "type": "coll",
+      "name": "Featured Collection",
+      "settings": {
+        "collection": "automated-collection",
+        "items_per_page": 4
+      }
+    },
+    "why_choose_us_G4MmDp": {
+      "type": "why-choose-us",
+      "blocks": {
+        "feature_fh6KUF": {
+          "type": "feature",
+          "settings": {
+            "why_choose_icon": "⚡",
+            "why_choose_title": "Feature Title",
+            "why_choose_description": "Feature description goes here."
+          }
+        },
+        "feature_Ktakjy": {
+          "type": "feature",
+          "settings": {
+            "why_choose_icon": "⚡",
+            "why_choose_title": "Feature Title",
+            "why_choose_description": "Feature description goes here."
+          }
+        },
+        "feature_iP8XwV": {
+          "type": "feature",
+          "settings": {
+            "why_choose_icon": "⚡",
+            "why_choose_title": "Feature Title",
+            "why_choose_description": "Feature description goes here."
+          }
+        },
+        "feature_98zX4w": {
+          "type": "feature",
+          "settings": {
+            "why_choose_icon": "⚡",
+            "why_choose_title": "Feature Title",
+            "why_choose_description": "Feature description goes here."
+          }
+        }
+      },
+      "block_order": [
+        "feature_fh6KUF",
+        "feature_Ktakjy",
+        "feature_iP8XwV",
+        "feature_98zX4w"
+      ],
+      "name": "Why Choose Us",
+      "settings": {
+        "heading": "Why Choose Us",
+        "Description": "Discover the key reasons our customers trust and love us."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "coll_WhmXMK",
+    "why_choose_us_G4MmDp"
+  ]
 }
